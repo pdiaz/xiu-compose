@@ -1,0 +1,30 @@
+# Full example found here: https://github.com/harlanc/xiu/blob/master/application/xiu/src/config/examples/config.toml
+
+[authsecret]
+# used for md5 authentication
+key = ""
+# used for simple authentication
+password = ""
+
+#live server configurations
+#######################################
+#   RTMP configurations(stand-alone)  #
+#######################################
+[rtmp]
+enabled = true
+port = 1935
+
+######################################
+#    HLS configurations              #
+######################################
+[hls]
+enabled = true
+port = 8080
+#defalut false
+need_record = true
+
+#######################################
+#   LOG configurations                #
+#######################################
+[log]
+level = "info"

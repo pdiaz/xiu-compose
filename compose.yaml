@@ -1,0 +1,22 @@
+# docker compose up -d
+
+services:
+  xiu:
+    container_name: xiu
+    # labels:
+    #   kompose.service.healthcheck.readiness.http_get_path: /_ping
+    #   kompose.service.healthcheck.readiness.http_get_port: 5150
+    #   kompose.service.healthcheck.readiness.interval: 10s
+    #   kompose.service.healthcheck.readiness.timeout: 10s
+    #   kompose.service.healthcheck.readiness.retries: 5
+    #   kompose.service.healthcheck.readiness.start_period: 1s
+    ports:
+      - 1935:1935
+      - 8000:8000
+      - 8080:8080
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: /app/bin/xiu --config /app/etc/config.toml
+    volumes:
+      - ./etc:/app/etc
